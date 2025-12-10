@@ -36,8 +36,23 @@ public class UserService {
         userResponse.setLastName(savedUser.getLastName());
         userResponse.setCreatedAt(savedUser.getCreatedAt());
         userResponse.setUpdatedAt(savedUser.getCreatedAt());
+
+        return userResponse;
     }
 
     public UserResponse getUserProfile(String userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        UserResponse userResponse = new UserResponse();
+        userResponse.setId(user.getId());
+        userResponse.setEmail(user.getEmail());
+        userResponse.setPassword(user.getPassword());
+        userResponse.setFirstName(user.getFirstName());
+        userResponse.setLastName(user.getLastName());
+        userResponse.setCreatedAt(user.getCreatedAt());
+        userResponse.setUpdatedAt(user.getCreatedAt());
+
+        return userResponse;
     }
 }
