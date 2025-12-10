@@ -4,15 +4,13 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.hibernate.annotations.ValueGenerationType;
-import org.hibernate.generator.internal.CurrentTimestampGeneration;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users")
 @Data
-public class UserModel {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
