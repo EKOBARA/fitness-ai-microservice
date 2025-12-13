@@ -7,4 +7,4 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb+srv://kobara_db_user:wow12345@cluster0.xxu3l1m.mongodb.net/activityfitness?retryWrites=true&w=majority
+
