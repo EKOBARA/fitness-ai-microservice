@@ -24,11 +24,20 @@ public class ActivityService {
                 .build();
 
         Activity savedRequest = activityRepository.save(activity);
-
-
+        return maptoActivity(activity);
     }
 
     private ActivityResponse maptoActivity(Activity activity){
+        ActivityResponse response = new ActivityResponse();
+        response.setId(activity.getId());
+        response.setType(activity.getType());
+        response.setDuration(activity.getDuration());
+        response.setCaloriesBurned(activity.getCaloriesBurned());
+        response.setStartTime(activity.getStartTime());
+        response.setCreatedAt(activity.getCreatedAt());
+        response.setUpdatedAt(activity.getUpdatedAt());
+        response.setAdditionalMetrics(activity.getAdditionalMetrics());
 
+        return response;
     }
 }
