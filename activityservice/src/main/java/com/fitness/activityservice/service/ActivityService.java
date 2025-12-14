@@ -44,7 +44,7 @@ public class ActivityService {
 
         return response;
     }
-
+// Response
     public List<ActivityResponse> getUserActivities(String userId) {
         List<Activity> activities = activityRepository.findByUserId(userId);
         return activities.stream()
